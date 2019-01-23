@@ -11,8 +11,8 @@ test_images, test_labels = mndata.load_testing()
 
 
 
-''' confirming type and looked up display method
-uses threshold of 200 when in fact image has variable greyness
+#confirming type and looked up display method
+#''uses threshold of 200 when in fact image has variable greyness
 
 print type(train_images[1])
 print train_images[1]
@@ -24,7 +24,7 @@ np_image = np.array(train_images[1], dtype='float')
 pixels = np_image.reshape((28, 28))
 plt.imshow(pixels, cmap='gray')
 plt.show()
-'''
+
 
 
 
