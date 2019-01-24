@@ -17,6 +17,7 @@ n = 10
 trials = 1000
 samples = 30000
 p_list = []
+no_match_list = []
 
 for j in range(samples):
     outcomes = []
@@ -33,7 +34,6 @@ for j in range(samples):
             if students[(i-1)%n] == 'h' and students[(i+1)%n] == 'h':
                 candidate_i.append(i)
 
-
         if len(candidate_i)>=1:
             k = choose_rand(candidate_i)
             outcomes.append(students[k])
@@ -46,7 +46,12 @@ for j in range(samples):
             #print 'no match'
             no_match_counter += 1
     p = head_count / float(total_count)
+    p_nm = no_match_counter / float(total_count)
     p_list.append(p)
+    no_match_list.append(p_nm)
 
 print np.average(p_list)
 print np.std(p_list)
+
+print np.average(no_match_list)
+print np.std(no_match_list)
